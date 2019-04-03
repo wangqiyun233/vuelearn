@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style type="text/css">
+            .div-wrap{
+                position: relative;
+                margin-bottom: 20px;
+            }
+            .select-wrap{
+                overflow: hidden;
+                margin-left: 100px;
+                width: 18px;
+            }
+            .select{
+                margin-left: -100px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 118px !important;
+                height: 32px !important;
+            }
+            .input{
+                position: absolute;
+                top: 1px;
+                left: 1px;
+                border: none;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                padding: 0 5px;
+                width: 90px;
+                height: 30px;
+                color: #212121;
+                text-align: center;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='div-wrap'>
+            <span class='select-wrap'>
+                <select class='select' onchange='this.parentNode.nextSibling.value=this.value'>
+                    <option>111</option>
+                    <option>222</option>
+                    <option>333</option>
+                </select>
+            </span>
+            <input class='input' value='111'>
+        </div>
+    </body>
+</html>

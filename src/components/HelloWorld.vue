@@ -20,16 +20,21 @@
       Toggle
     </button>
     <transition name="bounce">
-      <p v-if="demo1">hello HelloWorld this is test</p>
+      <p v-if="demo1">{{test}}</p>
     </transition>
   </div>
-
+  <div>
+    <span>count ={{count}}</span>
+    <button v-on:click="increment">增加</button>
+    <button v-on:click="incrementByAct">act增加</button>
+  </div>
     <router-link to="/new" :class="[ link ]" >跳转</router-link>
 
   </div>
 </template>
 
 <script>
+import {mapState,mapMutations,mapActions} from 'Vuex'
 export default {
   name: 'HelloWorld',
   data () {
@@ -41,10 +46,17 @@ export default {
       link:'link'
     }
   },
+  // computed:{
+  //   ...mapState(['test'])
+  
+  // },
+  computed:mapState(['test','count']),
   methods: {
+    ...mapMutations(['increment']),
     output(){
       this.show=!this.show;
-    }
+    },
+    ...mapActions(['incrementByAct'])
   }
 }
 </script>
